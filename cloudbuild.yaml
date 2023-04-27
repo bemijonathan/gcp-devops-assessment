@@ -1,7 +1,7 @@
 substitutions:
-  _IMAGE_NAME: gcr.io/$PROJECT_ID/$REPO_NAME
+  _IMAGE_NAME: gcr.io/$_PROJECT_ID/$_REPO_NAME
 steps: 
-- name: "docker"
+- name: "gcr.io/cloud-builders/docker"
   args: ["build", "-t", "${_IMAGE_NAME}", "."]
  
 - name: "gcr.io/cloud-builders/docker"
