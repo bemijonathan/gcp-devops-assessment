@@ -1,11 +1,9 @@
-substitutions:
-  _IMAGE_NAME: gcr.io/$_PROJECT_ID/$_REPO_NAME
 steps: 
 - name: "gcr.io/cloud-builders/docker"
-  args: ["build", "-t", "${_IMAGE_NAME}", "."]
+  args: ["build", "-t", "gcr.io/$PROJECT_ID/$REPO_NAME", "."]
  
 - name: "gcr.io/cloud-builders/docker"
-  args: ["push", "${_IMAGE_NAME}"]
+  args: ["push", "gcr.io/$PROJECT_ID/$REPO_NAME"]
 
 - name: "gcr.io/cloud-builders/kubectl"
   args: ["apply", "-f", "gke.yaml"]
