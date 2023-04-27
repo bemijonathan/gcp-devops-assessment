@@ -7,3 +7,6 @@ steps:
 
 - name: "gcr.io/cloud-builders/kubectl"
   args: ["apply", "-f", "gke.yaml"]
+  env:
+  - 'CLOUDSDK_COMPUTE_ZONE=us-central1-c'
+  - 'CLOUDSDK_CONTAINER_CLUSTER=frist-cluster'
